@@ -1,4 +1,4 @@
-\documentclass[12pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 
 %Packages
 
@@ -8,6 +8,12 @@
 \usepackage{lmodern}                % Improved font
 \usepackage{hyperref}               % Clickable references
 \usepackage{enumitem}               % Better lists
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\bibliographystyle{plainnat}
 
 %Formatting
 \onehalfspacing                      % 1.5 line spacing
@@ -39,38 +45,89 @@ An \textit{esoteric programming language}, or \textit{'esolang'}, refers to a ty
 
 \begin{enumerate}
     \item \textbf{Educational Value}
-    \newline By stripping languages down to their bare essentials, they can aid in understanding memory models, compilation, and control flow with little to nothing in the way, unlike traditional languages.
+    \newline By stripping languages down to their bare essentials, they can aid in understanding memory models, compilation, and control flow with little to nothing in the way, unlike traditional languages \cite{singer2025esolang}.
     
     \item \textbf{Artistic Expression}
-    \newline Some \textit{esolangs} treat code as a performative or artistic work, such as \textit{\href{https://github.com/your-diary/piet_programming_language/blob/master/README.md}{Piet}}, a visual language in which programs look like abstract, cubist paintings.
+    \newline Some \textit{esolangs} treat code as a performative or artistic work, such as \textit{Piet} \citep{piet}, a visual language in which programs look like abstract, cubist paintings.
     
     \item \textbf{Security Potential}
-    \newline Due to inherent code obfuscation, some languages like \textit{\href{https://jsfuck.com/}{JSFuck}} easily get past traditional malware detection. The opposite can also be done, sensitive code could theoretically have a built-in layer of 'encryption' by utilizing them.
+    \newline Due to inherent code obfuscation, some languages like \textit{JSFuck} \citep{jsfuck} easily get past traditional malware detection. The opposite can also be done, sensitive code could theoretically have a built-in layer of 'encryption' by utilizing them.
 
     \item \textbf{Compiler/ Interpreter Research}
-    \newline Some \texit{esolangs} feature unique compilation and interpretation processes. These can help contribute to understanding of the compilation process, and provide insights from a fresh angle. One example of this is \textit{\href{https://dgtools.readthedocs.io/en/latest/brainfuck.html}{Brainfuck}}, which was designed to have the smallest possible compiler fort he \textit{AmigaOS}.
+    \newline Some \textit{esolangs} feature unique compilation and interpretation processes. These can help contribute to understanding of the compilation process, and provide insights from a fresh angle. One example of this is \textit{Brainfuck} \citep{brainfuck}, which was designed to have the smallest possible compiler for the \textit{AmigaOS}.
     
 \end{enumerate}
 
 \section{Question Three}
 
+
+
 \begin{enumerate}
-    \item \textbf{}
+    \item \textbf{Piet}
+    \newline \citep{piet} is an \textit{esolang} designed by Ian Bogost in 2001. It is a visual language in which programs are represented as images composed of coloured blocks, called \textit{codels}. Program execution is determined by a pointer moving through these blocks.
+
+    The semantics of the language are defined by changes in hue and brightness between adjacent codels. This corresponds to typical language operations like stack manipulation and i/o. For instance, a +1 in hue and lightness corresponds to 'push'.
+
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.45\textwidth]{piet_hello_world.jpg}
+        \caption{"Hello World" written in Piet}
+        \label{fig:piet_hello_world}
+    \end{figure}
+
+    \item \textbf{Quantum INTERCAL} \citep{intercal} \newline Quantum INTERCAL is an extension of INTERCAL, originally created by Don Woods and James Lyon in 1972.
+
+    \newline It inherits INTERCALS structure, featuring excessive punctuation and unusual keywords. It adds quantum specific features such as non-deterministic behaviour, allowing statements to exist in superposition. Provided is a hello world program.
+
+
+    \begin{lstlisting}[caption={Hello World in Quantum INTERCAL}, label={lst:quantum_intercal}]
+    DO ,1 <- #13
+    PLEASE DO ,1 SUB #1 <- #72
+    PLEASE DO ,1 SUB #2 <- #101
+    PLEASE DO ,1 SUB #3 <- #108
+    PLEASE DO ,1 SUB #4 <- #108
+    PLEASE DO ,1 SUB #5 <- #111
+    PLEASE DO ,1 SUB #6 <- #44
+    PLEASE DO ,1 SUB #7 <- #32
+    PLEASE DO ,1 SUB #8 <- #87
+    PLEASE DO ,1 SUB #9 <- #111
+    PLEASE DO ,1 SUB #10 <- #114
+    PLEASE DO ,1 SUB #11 <- #108
+    PLEASE DO ,1 SUB #12 <- #100
+    PLEASE DO ,1 SUB #13 <- #33
+    PLEASE READ OUT ,1
+    PLEASE GIVE UP
+    \end{lstlisting}
     
 \end{enumerate}
 
 \section{Question Four}
-% Content to be added
+
+SALT was developed by researchers in formal methods at various European and Australian institutions \citep{salt}. \newline It was not created as a general purpose programming language, rather being a specification and assertion language based on \textbf{temporal logic}. This allows developers to formally describe the behaviours and properties of their systems over time, especially useful for reactive and concurrent systems.
+
+The main advantage of SALT lies in its rigor. The use of a mathematically grounded method of stating and verifying properties, significantly reduces the ambiguity at runtime, and supports formal verification that would be impossible to achieve through testing alone.
+
+Two real world domains where SALT would be applicable:
+ \newline - Safety-critical systems, where we want extreme correctness and predictability, like medical devices.
+ \newline - Concurrent and distributed systems, where interaction between components may get messy without proper rules.
+
+\section{Question Five}
+
+Vibe coding is a term described by Andrej Kaparthy \citep{karpathy_vibe} as a programming apporach where the 'developer' relies heavily on intution, experimentation, and especiallly AI generated code, rather than going through a traditional planning and iterative approach.
+
+\textbf{Potential advantages:}
+
+\newline - Increased productivity - The raw code output of a vibe coder is far higher than that of a traditional programmer, as AI tools can rapidly generate boilerplate and simple code
+\newline - Low barrier to entry - Vibe coding is possible for anyone, allowing users to build systems without any in depth knowledge. Vibe coding may serve as a learning tool, allowing those with interest to get involved in software development
+
+\textbf{Potential drawbacks:}
+
+\newline Technical debt - Although a system may work, when limited planning has gone in to it, edge cases, performance issues, reduced scalability and security concerns become an issue, possibly leading to a higher cost than designing a system traditionally from the start.
+
+\newline Over-reliance on tooling - Dependence on AI tools is becoming an increasing concern, with developers struggling to reason independently.
 
 \section{References}
-\begin{enumerate}
-    \item Jeremy Singer and Steve Draper (2025) (PDF) let’s take esoteric programming languages seriously. Available at: \url{https://www.researchgate.net/publication/391953647\_Let’s\_Take\_Esoteric\_Programming\_Languages\_Seriously} (Accessed: 22 February 2026). 
-\end{enumerate}
-
-
-\begin{itemize}[leftmargin=1.5em]
-    \item Author, \textit{Title of Source}, Publisher or Website, Year.
-    \item Author, \textit{Title of Source}, Publisher or Website, Year.
-\end{itemize}
+\bibliography{references}
 
 \end{document}
