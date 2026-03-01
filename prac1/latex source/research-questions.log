@@ -1,0 +1,9 @@
+This is mikTeX, Version 3.141592653 (MiKTeX 25.12) (preloaded format=tex 2026.2.22)  22 FEB 2026 19:02
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./research-questions.tex
+(research-questions.tex
+! Undefined control sequence.
+l.1 \documentclass
+                  [12pt,a4paper]{article}
+? 
