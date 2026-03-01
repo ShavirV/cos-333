@@ -1,0 +1,20 @@
+; polygon takes in args sides and length
+; all it does is pass on to a helper function with sides, length and sides (remaining, length, total)
+; stop cond for helper is remaining == 0
+; move turt forward by length
+; rotate by value of internal angle in a regular polygon, 360/total sides
+; call itself recursively with one less remaining side to draw, and repeat from 3 
+
+to polygon :sides :length
+    polygonHelper :sides :length :sides
+end
+
+
+to polygonHelper :remaining :length :total
+    if :remaining = 0 [ stop ]
+
+    fd :length
+    rt 360 / :total
+
+    polygonHelper :remaining - 1 :length :total
+end

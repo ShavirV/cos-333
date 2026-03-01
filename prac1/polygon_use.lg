@@ -1,0 +1,18 @@
+to polygon :sides :length
+
+polygonHelper :sides :length :sides
+
+end
+
+to polygonHelper :remaining :length :total
+
+if :remaining = 0 [ stop ]
+
+fd :length
+
+rt 360 / :total
+
+polygonHelper :remaining - 1 :length :total
+
+end
+
