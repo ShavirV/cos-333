@@ -32,11 +32,9 @@ END {
         printf "Total for row %d: %d\n", i, rowTotals[i]
     }
 
-    # Print column totals (missing values assumed zero)
+    #print column totals (missing values assumed zero)
     for (i = 1; i <= maxCols; i++) {
         printf "Total for column %d: %d\n", i, colTotal[i] + 0
     }
-
-    # Print entire matrix total
     printf "Total for entire matrix: %d\n", grandTotal
 }
