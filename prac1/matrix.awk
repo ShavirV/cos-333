@@ -1,4 +1,3 @@
-#!/usr/bin/env gawk -f
 
 BEGIN {
     FS = "," #comma-separated values
