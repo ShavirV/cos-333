@@ -5,9 +5,9 @@
 
 (define (coneVolume r h)
   (let ((pi (/ 22 7)))
-    (if (or ( <= r 0) (<= h 0))
+    (if (or ( <= r 0) (<= h 0)) ;handle invalid input
         0
-        (/ (* pi (* r r) h) 3))))
+        (/ (* pi (* r r) h) 3)))) ;implicit else block, actually calculate
      
 (display (coneVolume 1.5 2.1))
 (newline)
