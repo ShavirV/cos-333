@@ -9,14 +9,6 @@
         0
         (/ (* pi (* r r) h) 3)))) ;implicit else block, actually calculate
      
-(display (coneVolume 1.5 2.1))
-(newline)
-(display (coneVolume -3 2.1))
-(newline)
-(display (coneVolume 1.5 0))
-(newline)
-(display (coneVolume 1.5 300))
-
 
 ;;;task 2:
 
@@ -27,15 +19,6 @@
           (countNonZeroValues (cdr lst)) ;resf of the list, recursively 'deq' the list and count
           (+ 1 (countNonZeroValues (cdr lst)))))) ;implicit else see a nonzero
 
-
-(display (countNonZeroValues '()))
-(newline)
-(display (countNonZeroValues '(0 0)))
-(newline)
-(display (countNonZeroValues '(3 0 -8 0)))
-(newline)
-(display (countNonZeroValues '(1 2 3 4)))
-(newline)
 
 
 ;;;task 3
@@ -49,11 +32,33 @@
             (doubleEverySecondElement (cdr (cdr lst))))))) ;skip every other element 
 
 
-(display (doubleEverySecondElement '()))
+
+
+;;Task 1
+(display(coneVolume 1.2 3.6))
 (newline)
-(display (doubleEverySecondElement '(4 6)))
+(display(coneVolume -1.2 3.6))
 (newline)
-(display (doubleEverySecondElement '(4 6 2 3)))
+(display(coneVolume 1.2 -3.6))
 (newline)
-(display (doubleEverySecondElement '(1 2 3 4 5 6)))
+(display(coneVolume -1.2 -3.6))
 (newline)
+;;Task 2
+(display(countNonZeroValues '()))
+(newline)
+(display(countNonZeroValues '(0 0)))
+(newline)
+(display(countNonZeroValues '(3 -2)))
+(newline)
+(display(countNonZeroValues '(-3 0 3 0 -1)))
+(newline)
+;;Task 3
+(display(doubleEverySecondElement'()))
+(newline)
+(display(doubleEverySecondElement'(5)))
+(newline)
+(display(doubleEverySecondElement'(5 2)))
+(newline)
+(display(doubleEverySecondElement'(5 2 6)))
+(newline)
+(display(doubleEverySecondElement'(5 2 6 5 3)))
