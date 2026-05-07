@@ -1,0 +1,9 @@
+%empty lists are equivalent, base case
+getAbsNonZeros([],[]).
+
+%found a zero, skip it and recurse
+getAbsNonZeros([0|L1],L2) :- getAbsNonZeros(L1,L2).
+
+% nonzero, take head's absolute and assert agains L2 head. recurse on
+% rest of list/s
+getAbsNonZeros([H|L1], [AbsH|L2]) := AbsH is abs(H), getAbsNonZeros(L1,L2).
