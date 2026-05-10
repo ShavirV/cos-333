@@ -1,0 +1,14 @@
+absPositivesNegatives([], []).
+
+absPositivesNegatives([H | T], [H | R]) :-
+    H > 0,
+    absPositivesNegatives(T, R).
+
+absPositivesNegatives([H | T], [X | R]) :-
+    H < 0,
+    X is 0 - H,
+    absPositivesNegatives(T, R).
+
+absPositivesNegatives([H | T], R) :-
+    H =:= 0,
+    absPositivesNegatives(T, R).
